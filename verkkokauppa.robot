@@ -8,20 +8,22 @@ Open google
     Maximize Browser Window
     Page Should Contain    Käytämme evästeitä käyttökokemuksen parantamiseen
     
-    Sleep  2s
+    #Sleep  2s
     Click Element    id:allow-cookies
 
     #Testing if every product category has an Icon
 
-    Sleep  2s
+    #Sleep  2s
     Click Element    xpath:/html/body/div[1]/div[1]/header/div/label
 
     Sleep    2s
 
-    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul
+    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[*]
 
-    FOR    ${num}    IN RANGE    1    ${count}
-        Page Should Contain Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[1]/svg
+    Log    ${count}
+
+    FOR    ${num}    IN RANGE    1    ${count}-3 
+        Page Should Contain Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span
     END
     
     Sleep    1s

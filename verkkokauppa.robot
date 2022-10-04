@@ -18,7 +18,7 @@ Open google
 
     Sleep    2s
 
-    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul
+    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[*]
 
     FOR    ${num}    IN RANGE    1    ${count}
         Page Should Contain Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[1]/svg
@@ -44,17 +44,20 @@ Open verkkokauppa
     Sleep    1s
 
     # Sleep    2s
-    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul
-
-    FOR    ${num}    IN RANGE    1    ${count}
-        ${text}=     Get Text    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[2]
+    # ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${count}]
+    ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[*]
+# -3 becouse the last 3 are not categories
+    FOR    ${num}    IN RANGE    1    ${count}-3 
         Click Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a
+        Sleep  1s
+        ${text}=     Get Text    xpath:/html/body/div[1]/div/div/div/main/header/div[1]/h1
         Page Should Contain    ${text}
-        Sleep    2s
+        Sleep    1s
         Click Element    xpath:/html/body/div[1]/div[1]/header/div/label
         Sleep    1s
     END
     
+    Close All Browsers
 
     # Sleep    1s
     

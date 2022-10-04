@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221004 12:38:36.403" rpa="false" schemaversion="3">
-<suite id="s1" name="Verkkokauppa" source="c:\Users\Edu\Desktop\IDEs\SoftwareTesting\Software_Testing_final_project\verkkokauppa.robot">
-<test id="s1-t1" name="Open google" line="8">
+<robot generator="Robot 5.0.1 (Python 3.10.7 on darwin)" generated="20221004 13:28:53.693" rpa="false" schemaversion="3">
+<suite id="s1" name="Verkkokauppa" source="/Users/sandu/Documents/HAMK/Software-Testing/FinalProject/verkkokauppa.robot">
+<test id="s1-t1" name="Open verkkokauppa" line="31">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://www.verkkokauppa.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221004 12:38:36.900" level="INFO">Opening browser 'Chrome' to base url 'https://www.verkkokauppa.com/'.</msg>
-<status status="PASS" starttime="20221004 12:38:36.899" endtime="20221004 12:38:41.667"/>
+<msg timestamp="20221004 13:28:53.888" level="INFO">Opening browser 'Chrome' to base url 'https://www.verkkokauppa.com/'.</msg>
+<status status="PASS" starttime="20221004 13:28:53.888" endtime="20221004 13:28:56.938"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221004 12:38:41.670" endtime="20221004 12:38:42.258"/>
+<status status="PASS" starttime="20221004 13:28:56.939" endtime="20221004 13:28:57.281"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Käytämme evästeitä käyttökokemuksen parantamiseen, analytiikkaan ja personoidun sisällön tuottamiseen. Suostumuksellasi käytämme evästeitä myös markkinoinnin kohdentamiseen.</arg>
+<arg>Käytämme evästeitä käyttökokemuksen parantamiseen</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221004 12:38:42.363" level="INFO">Current page contains text 'Käytämme evästeitä käyttökokemuksen parantamiseen, analytiikkaan ja personoidun sisällön tuottamiseen. Suostumuksellasi käytämme evästeitä myös markkinoinnin kohdentamiseen.'.</msg>
-<status status="PASS" starttime="20221004 12:38:42.259" endtime="20221004 12:38:42.364"/>
+<msg timestamp="20221004 13:28:57.401" level="INFO">Current page contains text 'Käytämme evästeitä käyttökokemuksen parantamiseen'.</msg>
+<status status="PASS" starttime="20221004 13:28:57.282" endtime="20221004 13:28:57.402"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:allow-cookies</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221004 12:38:42.366" level="INFO">Clicking element 'id:allow-cookies'.</msg>
-<status status="PASS" starttime="20221004 12:38:42.365" endtime="20221004 12:38:42.585"/>
+<msg timestamp="20221004 13:28:57.403" level="INFO">Clicking element 'id:allow-cookies'.</msg>
+<status status="PASS" starttime="20221004 13:28:57.402" endtime="20221004 13:28:58.074"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath:/html/body/div[1]/div[1]/header/div/label</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221004 12:38:42.587" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[1]/header/div/label'.</msg>
-<status status="PASS" starttime="20221004 12:38:42.586" endtime="20221004 12:38:42.892"/>
+<msg timestamp="20221004 13:28:58.075" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[1]/header/div/label'.</msg>
+<status status="PASS" starttime="20221004 13:28:58.074" endtime="20221004 13:28:58.187"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221004 13:28:59.188" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221004 13:28:58.187" endtime="20221004 13:28:59.188"/>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <var>${count}</var>
 <arg>xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20221004 12:38:43.057" level="INFO">${count} = 1</msg>
-<status status="PASS" starttime="20221004 12:38:42.894" endtime="20221004 12:38:43.058"/>
+<msg timestamp="20221004 13:28:59.234" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20221004 13:28:59.189" endtime="20221004 13:28:59.235"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${num}</var>
@@ -44,18 +50,44 @@
 <value>${count}</value>
 <iter>
 <var name="${num}"/>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[1]/svg</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" starttime="20221004 12:38:43.059" endtime="20221004 12:38:43.060"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.236" endtime="20221004 13:28:59.236"/>
 </kw>
-<status status="NOT RUN" starttime="20221004 12:38:43.059" endtime="20221004 12:38:43.060"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.236" endtime="20221004 13:28:59.236"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.236" endtime="20221004 13:28:59.236"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.236" endtime="20221004 13:28:59.237"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[1]/div[1]/header/div/label</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.237" endtime="20221004 13:28:59.237"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221004 13:28:59.237" endtime="20221004 13:28:59.237"/>
+</kw>
+<status status="NOT RUN" starttime="20221004 13:28:59.235" endtime="20221004 13:28:59.237"/>
 </iter>
-<status status="NOT RUN" starttime="20221004 12:38:43.058" endtime="20221004 12:38:43.060"/>
+<status status="NOT RUN" starttime="20221004 13:28:59.235" endtime="20221004 13:28:59.237"/>
 </for>
-<status status="PASS" starttime="20221004 12:38:36.898" endtime="20221004 12:38:43.061"/>
+<status status="PASS" starttime="20221004 13:28:53.886" endtime="20221004 13:28:59.238"/>
 </test>
-<status status="PASS" starttime="20221004 12:38:36.414" endtime="20221004 12:38:43.063"/>
+<status status="PASS" starttime="20221004 13:28:53.696" endtime="20221004 13:28:59.239"/>
 </suite>
 <statistics>
 <total>

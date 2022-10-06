@@ -73,13 +73,25 @@ Test landing pages
 Test search feature
     Open Browser    https://www.verkkokauppa.com/    Chrome
 
+    ${ps5}=    Set Variable    ps5
+
     Maximize Browser Window
     Page Should Contain    Käytämme evästeitä käyttökokemuksen parantamiseen
     
     Sleep  2s
     Click Element    id:allow-cookies
 
-    Input Text    xpath:/html/body/div[1]/div/header/div/nav/form/div/input    ps5
-    
+    Input Text    xpath:/html/body/div[1]/div/header/div/nav/form/div/input    ${ps5}
+    Sleep    2s
 
-    
+    Click Button    xpath:/html/body/div[1]/div/header/div/nav/form/div/div/button[2]
+    Sleep    2s
+
+    Capture Element Screenshot    xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]
+
+    Click Element    xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]/article/a
+    Sleep    2s
+
+    Page Should Contain    ${ps5}
+
+    Close All Browsers

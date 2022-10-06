@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    XML
 
 *** Test Cases ***
-Open google
+Check icons in categories
     Open Browser    https://www.verkkokauppa.com/    Chrome
 
     Maximize Browser Window
@@ -30,8 +30,7 @@ Open google
     Sleep    1s
     Close All Browsers
 
-*** Test Cases ***
-Open verkkokauppa
+Test landing pages
     Open Browser    https://www.verkkokauppa.com/    Chrome
 
     Maximize Browser Window
@@ -39,8 +38,6 @@ Open verkkokauppa
     
     Sleep  2s
     Click Element    id:allow-cookies
-
-    #Testing if every product category has an Icon
 
     # Sleep  2s
     Click Element    xpath:/html/body/div[1]/div[1]/header/div/label
@@ -72,5 +69,17 @@ Open verkkokauppa
     END
     
     Close All Browsers
+
+Test search feature
+    Open Browser    https://www.verkkokauppa.com/    Chrome
+
+    Maximize Browser Window
+    Page Should Contain    Käytämme evästeitä käyttökokemuksen parantamiseen
+    
+    Sleep  2s
+    Click Element    id:allow-cookies
+
+    Input Text    xpath:/html/body/div[1]/div/header/div/nav/form/div/input    ps5
+    
 
     

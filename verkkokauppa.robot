@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    XML
 
 *** Test Cases ***
 Open google
@@ -22,7 +23,7 @@ Open google
 
     Log    ${count}
 
-    FOR    ${num}    IN RANGE    1    ${count}-3 
+    FOR    ${num}    IN RANGE    1    ${count}-2
         Page Should Contain Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span
     END
     
@@ -36,7 +37,7 @@ Open verkkokauppa
     Maximize Browser Window
     Page Should Contain    Käytämme evästeitä käyttökokemuksen parantamiseen
     
-    # Sleep  2s
+    Sleep  2s
     Click Element    id:allow-cookies
 
     #Testing if every product category has an Icon
@@ -46,14 +47,25 @@ Open verkkokauppa
     Sleep    1s
 
     # Sleep    2s
-    # ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${count}]
+    
     ${count}=    Get Element Count    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[*]
-# -3 becouse the last 3 are not categories
-    FOR    ${num}    IN RANGE    1    ${count}-3 
+    # -3 becouse the last 3 are not categories
+    FOR    ${num}    IN RANGE    1    ${count}-2
+        IF    ${num} > 14
+            Click Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[3]/div[2]
+            Sleep    1s
+            Click Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[3]/div[2]
+            Sleep    1s
+            Click Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[3]/div[2]
+            Sleep    2s
+        END
+        
+        ${text}=    Get Text    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a/span[2]
         Click Element    xpath:/html/body/div[1]/div/div/aside/nav/div/div[2]/ul/li[${num}]/a
         Sleep  1s
-        ${text}=     Get Text    xpath:/html/body/div[1]/div/div/div/main/header/div[1]/h1
+        
         Page Should Contain    ${text}
+        
         Sleep    1s
         Click Element    xpath:/html/body/div[1]/div[1]/header/div/label
         Sleep    1s
@@ -61,5 +73,4 @@ Open verkkokauppa
     
     Close All Browsers
 
-    # Sleep    1s
     

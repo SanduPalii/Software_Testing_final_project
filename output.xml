@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221006 14:45:05.525" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221007 13:19:03.690" rpa="false" schemaversion="3">
 <suite id="s1" name="Verkkokauppa" source="c:\Users\Edu\Desktop\IDEs\SoftwareTesting\Software_Testing_final_project\verkkokauppa.robot">
 <test id="s1-t1" name="Test search feature" line="73">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://www.verkkokauppa.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221006 14:45:05.886" level="INFO">Opening browser 'Chrome' to base url 'https://www.verkkokauppa.com/'.</msg>
-<status status="PASS" starttime="20221006 14:45:05.886" endtime="20221006 14:45:09.797"/>
+<msg timestamp="20221007 13:19:04.334" level="INFO">Opening browser 'Chrome' to base url 'https://www.verkkokauppa.com/'.</msg>
+<status status="PASS" starttime="20221007 13:19:04.333" endtime="20221007 13:19:09.447"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${ps5}</var>
 <arg>ps5</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221006 14:45:09.799" level="INFO">${ps5} = ps5</msg>
-<status status="PASS" starttime="20221006 14:45:09.798" endtime="20221006 14:45:09.799"/>
+<msg timestamp="20221007 13:19:09.450" level="INFO">${ps5} = ps5</msg>
+<status status="PASS" starttime="20221007 13:19:09.449" endtime="20221007 13:19:09.450"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221006 14:45:09.800" endtime="20221006 14:45:10.277"/>
+<status status="PASS" starttime="20221007 13:19:09.458" endtime="20221007 13:19:10.322"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>Käytämme evästeitä käyttökokemuksen parantamiseen</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221006 14:45:10.384" level="INFO">Current page contains text 'Käytämme evästeitä käyttökokemuksen parantamiseen'.</msg>
-<status status="PASS" starttime="20221006 14:45:10.279" endtime="20221006 14:45:10.385"/>
+<msg timestamp="20221007 13:19:10.474" level="INFO">Current page contains text 'Käytämme evästeitä käyttökokemuksen parantamiseen'.</msg>
+<status status="PASS" starttime="20221007 13:19:10.324" endtime="20221007 13:19:10.474"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221006 14:45:12.395" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221006 14:45:10.388" endtime="20221006 14:45:12.396"/>
+<msg timestamp="20221007 13:19:12.483" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221007 13:19:10.476" endtime="20221007 13:19:12.483"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:allow-cookies</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221006 14:45:12.401" level="INFO">Clicking element 'id:allow-cookies'.</msg>
-<status status="PASS" starttime="20221006 14:45:12.399" endtime="20221006 14:45:12.546"/>
+<msg timestamp="20221007 13:19:12.487" level="INFO">Clicking element 'id:allow-cookies'.</msg>
+<status status="PASS" starttime="20221007 13:19:12.486" endtime="20221007 13:19:12.705"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath:/html/body/div[1]/div/header/div/nav/form/div/input</arg>
 <arg>${ps5}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221006 14:45:12.548" level="INFO">Typing text 'ps5' into text field 'xpath:/html/body/div[1]/div/header/div/nav/form/div/input'.</msg>
-<status status="PASS" starttime="20221006 14:45:12.547" endtime="20221006 14:45:12.713"/>
+<msg timestamp="20221007 13:19:12.706" level="INFO">Typing text 'ps5' into text field 'xpath:/html/body/div[1]/div/header/div/nav/form/div/input'.</msg>
+<status status="PASS" starttime="20221007 13:19:12.705" endtime="20221007 13:19:13.133"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221006 14:45:14.729" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221006 14:45:12.713" endtime="20221006 14:45:14.730"/>
+<msg timestamp="20221007 13:19:15.144" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221007 13:19:13.134" endtime="20221007 13:19:15.145"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath:/html/body/div[1]/div/header/div/nav/form/div/div/button[2]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221006 14:45:14.732" level="INFO">Clicking button 'xpath:/html/body/div[1]/div/header/div/nav/form/div/div/button[2]'.</msg>
-<status status="PASS" starttime="20221006 14:45:14.731" endtime="20221006 14:45:14.881"/>
+<msg timestamp="20221007 13:19:15.150" level="INFO">Clicking button 'xpath:/html/body/div[1]/div/header/div/nav/form/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20221007 13:19:15.149" endtime="20221007 13:19:15.631"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221006 14:45:16.895" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221006 14:45:14.882" endtime="20221006 14:45:16.895"/>
+<msg timestamp="20221007 13:19:17.646" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221007 13:19:15.635" endtime="20221007 13:19:17.646"/>
 </kw>
 <kw name="Capture Element Screenshot" library="SeleniumLibrary">
 <arg>xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]</arg>
 <doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<msg timestamp="20221006 14:45:17.081" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-1.png"&gt;&lt;img src="selenium-element-screenshot-1.png" width="400px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20221006 14:45:16.896" endtime="20221006 14:45:17.081"/>
+<msg timestamp="20221007 13:19:18.651" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-1.png"&gt;&lt;img src="selenium-element-screenshot-1.png" width="400px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221007 13:19:17.648" endtime="20221007 13:19:18.651"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]/article/a</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221006 14:45:17.085" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]/article/a'.</msg>
-<status status="PASS" starttime="20221006 14:45:17.083" endtime="20221006 14:45:17.266"/>
+<msg timestamp="20221007 13:19:18.654" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/div/div/main/div/div[2]/div[1]/ol/li[1]/article/a'.</msg>
+<status status="PASS" starttime="20221007 13:19:18.653" endtime="20221007 13:19:19.045"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221006 14:45:19.284" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221006 14:45:17.270" endtime="20221006 14:45:19.286"/>
+<msg timestamp="20221007 13:19:21.061" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221007 13:19:19.046" endtime="20221007 13:19:21.063"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${ps5}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221006 14:45:19.345" level="INFO">Current page contains text 'ps5'.</msg>
-<status status="PASS" starttime="20221006 14:45:19.289" endtime="20221006 14:45:19.346"/>
+<msg timestamp="20221007 13:19:21.141" level="INFO">Current page contains text 'ps5'.</msg>
+<status status="PASS" starttime="20221007 13:19:21.066" endtime="20221007 13:19:21.142"/>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20221006 14:45:19.347" endtime="20221006 14:45:21.556"/>
+<status status="PASS" starttime="20221007 13:19:21.144" endtime="20221007 13:19:23.523"/>
 </kw>
-<status status="PASS" starttime="20221006 14:45:05.884" endtime="20221006 14:45:21.557"/>
+<status status="PASS" starttime="20221007 13:19:04.331" endtime="20221007 13:19:23.525"/>
 </test>
-<status status="PASS" starttime="20221006 14:45:05.532" endtime="20221006 14:45:21.559"/>
+<status status="PASS" starttime="20221007 13:19:03.706" endtime="20221007 13:19:23.529"/>
 </suite>
 <statistics>
 <total>

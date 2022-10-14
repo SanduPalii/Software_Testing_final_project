@@ -148,3 +148,33 @@ Test shopping cart
     Page Should Contain    ${sony}
 
     Close All Browsers
+
+*** Test Cases ***
+#Test case 6
+Test the navigation bar
+    Open Browser    https://www.verkkokauppa.com/    Chrome
+    Page Should Contain    Tuotealueet
+    click element   xpath://label[@class='sc-uv1rq8-2 sc-xthnga-0 deDyHu gnKWQs']
+    sleep  3s
+    Element should be enabled   xpath://a[@class='sc-1tlhs3i-0 eqGIDR']
+    click element   xpath://a[@class='sc-1tlhs3i-0 eqGIDR']
+    Page Should Contain    Audio ja hifi
+    Sleep    2s
+    Close All Browsers
+
+
+
+*** Test Cases ***
+#Test case 7
+Test the external link, store's facebook page
+    Open Browser    https://www.verkkokauppa.com/    Chrome
+    sleep  5s
+    Page Should Contain    Sosiaalinen media
+    Page Should Contain    Facebook
+    Element should be enabled   xpath://li[@class='social__link social__link--facebook']
+    click element   xpath://li[@class='social__link social__link--facebook']
+    sleep  2s
+    Switch Window  new
+    Page Should Contain    Verkkokauppa.com
+    sleep  2s
+    Close All Browsers
